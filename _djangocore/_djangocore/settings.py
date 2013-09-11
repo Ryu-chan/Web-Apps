@@ -1,4 +1,5 @@
 # Django settings for _djangocore project.
+from os.path import expanduser
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/mint1/git/Web-Apps/_db/data.sqlite3',#change this depending on work computer # Or path to database file if using sqlite3.
+        'NAME': expanduser("~")+'/git/Web-Apps/_db/data.sqlite3',#change this depending on work computer # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
