@@ -1,0 +1,46 @@
+/* lightest to darkest */
+$lightest:#FCFFF5;
+$lighter:#D1DBBD;
+$medium:#91AA9D;
+$darker:#3E606F;
+$darkest:#193441;
+
+
+*{
+	padding:0;
+	border:0;
+	margin:0;
+	font-family:"Open Sans",sans-serif;
+}
+
+a{
+	text-decoration:none;
+	color:inherit;
+	cursor: pointer;
+}
+body{
+	background:$darkest;
+
+	>header{
+		width:100%;
+		box-shadow:0px 2px 1px $darker;
+
+		>#title{
+			padding:12px 0px 12px 30px;
+			color:$lighter;
+			font-size:42px;
+			font-weight:300;
+			text-shadow:
+				0px -2px 0px rgba(0,0,0,0.8),
+				0px 1px 0px rgba(255,255,255,0.4);
+
+			>span{
+				font-size:20px;
+				padding-left:20px;
+				padding-right:20px;
+				text-shadow:
+					0px 1px 0px rgba(255,255,255,0.2);
+			}
+		}
+	}
+}
