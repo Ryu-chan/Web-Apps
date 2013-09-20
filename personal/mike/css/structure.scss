@@ -4,6 +4,7 @@ $lighter:#D1DBBD;
 $medium:#91AA9D;
 $darker:#3E606F;
 $darkest:#193441;
+$footheight:40px;
 
 
 *{
@@ -18,29 +19,60 @@ a{
 	color:inherit;
 	cursor: pointer;
 }
+
+html, body{
+	height:100%;
+	margin:0;
+   	padding:0;
+}
+
 body{
 	background:$darkest;
 
-	>header{
-		width:100%;
-		box-shadow:0px 2px 1px $darker;
+	>#container{
+		min-height:100%;
+   		position:relative;
+   		height:100%;
 
-		>#title{
-			padding:12px 0px 12px 30px;
-			color:$lighter;
-			font-size:42px;
-			font-weight:300;
-			text-shadow:
-				0px -2px 0px rgba(0,0,0,0.8),
-				0px 1px 0px rgba(255,255,255,0.4);
+		>header{
+			width:100%;
+			box-shadow:0px 2px 1px $darker;
 
-			>span{
-				font-size:20px;
-				padding-left:20px;
-				padding-right:20px;
+			>#title{
+				padding:12px 0px 12px 30px;
+				color:$lighter;
+				font-size:42px;
+				font-weight:300;
 				text-shadow:
-					0px 1px 0px rgba(255,255,255,0.2);
+					0px -2px 0px rgba(0,0,0,0.8),
+					0px 1px 0px rgba(255,255,255,0.4);
+
+				>.navigation{
+					float:right;
+
+					>span{
+					font-size:20px;
+					padding-right:40px;
+					text-shadow:
+						0px 1px 0px rgba(255,255,255,0.2);
+					}
+				}
 			}
+		}
+		#body{
+			display:block;
+			width:100%;
+			height:500px;
+   			padding-bottom:$footheight;
+		}
+
+		footer{
+			color:$darker;
+			text-align: center;
+			position:absolute;
+		   	bottom:0;
+		   	width:100%;
+		   	height:$footheight;
 		}
 	}
 }
