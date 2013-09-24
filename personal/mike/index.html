@@ -9,6 +9,44 @@
 		<link rel='stylesheet' href='css/base.css'/>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			var ready1 = function() {
+			    var $el, leftPos, newWidth,
+			        $mainNav = $(".navigation");
+
+			    if($("#magic-line").length){
+
+			    }
+			    else{
+			    	$mainNav.append("<span id='magic-line'></span>");
+			    }
+
+			    var $magicLine = $("#magic-line");
+			    
+			    $magicLine
+			        .width($(".current_page_item").width())
+			        .css("left", $(".current_page_item a").parent().position().left)
+			        .data("origLeft", $magicLine.position().left)
+			        .data("origWidth", $magicLine.width());
+			        
+			    $(".navigation span a").hover(function() {
+			        $el = $(this);
+			        leftPos = $el.parent().position().left;
+			        newWidth = $el.parent().width();
+			        $magicLine.stop().animate({
+			            left: leftPos,
+			            width: newWidth
+			        });
+			    }, function() {
+			        $magicLine.stop().animate({
+			            left: $magicLine.data("origLeft"),
+			            width: $magicLine.data("origWidth")
+			        });    
+			    });
+			};
+			$(document).ready(ready1);
+			$(window).resize(ready1);
+		</script>
 	</head>
 	<body>
 		<div id="container">
@@ -16,17 +54,20 @@
 				<div id="title">
 					Michael Paulauski
 					<span class = "navigation">
+						<span class="current_page_item" id="home">
+							<a href="#">Home</a>
+						</span>
 						<span id="videos">
-							Videos
+							<a href="#">Videos</a>
 						</span>
 						<span id="voiceover">
-							Voice-Overs
+							<a href="#">Voice-Overs</a>
 						</span>
 						<span id="resume">
-							Resume
+							<a href="#">Resume</a>
 						</span>
-						<span id-="contact">
-							Contact Me
+						<span id="contact">
+							<a href="#">Contact Me</a>
 						</span>
 					</span>
 				</div>
