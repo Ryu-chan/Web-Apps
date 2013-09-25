@@ -51,17 +51,18 @@
 				$(".body").css("height",$bodyheight);
 			};
 
-			var canvasDraw = function(){
-				
+			var videoResize = function(){
+
 			};
 
 			$(document).ready(ready1);
 			$(document).ready(resizeWindow);
-
+			$(document).ready(videoResize);
 
 
 			$(window).resize(ready1);
 			$(window).resize(resizeWindow);
+			$(window).resize(videoResize);
 		</script>
 	</head>
 	<body>
@@ -89,7 +90,7 @@
 				</div>
 			</header>
 		<div class="body">
-			&nbsp;
+			<iframe id= "video1" width="420" height="315" src="http://www.youtube.com/embed/WlzAQRmo_F0" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<footer>
 			This is the footer. Copyright or whatever 2013.
