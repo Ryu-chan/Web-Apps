@@ -44,8 +44,24 @@
 			        },200);
 			    });
 			};
+
+			var resizeWindow = function() {
+				var $headerfooter=$("header").height()+$("footer").height();
+				var $bodyheight=$(window).height()-$headerfooter;
+				$(".body").css("height",$bodyheight);
+			};
+
+			var canvasDraw = function(){
+				
+			};
+
 			$(document).ready(ready1);
+			$(document).ready(resizeWindow);
+
+
+
 			$(window).resize(ready1);
+			$(window).resize(resizeWindow);
 		</script>
 	</head>
 	<body>
@@ -72,7 +88,7 @@
 					</span>
 				</div>
 			</header>
-		<div id="body">
+		<div class="body">
 			&nbsp;
 		</div>
 		<footer>
