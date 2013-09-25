@@ -36,12 +36,12 @@
 			        $magicLine.stop().animate({
 			            left: leftPos,
 			            width: newWidth
-			        });
+			        },200);
 			    }, function() {
 			        $magicLine.stop().animate({
 			            left: $magicLine.data("origLeft"),
 			            width: $magicLine.data("origWidth")
-			        });    
+			        },200);
 			    });
 			};
 			$(document).ready(ready1);
