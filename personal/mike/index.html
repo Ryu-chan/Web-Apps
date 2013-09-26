@@ -45,24 +45,42 @@
 			    });
 			};
 
+			var videoCenter = function(){
+				var $bodywidth = $(window).width();
+				var $videowidth = $(".video").children().css("width");
+				var $videopadding = ($bodywidth/2)-($videowidth/2);
+				$(".video #current_video").css("padding-left",$videopadding);
+			};
+
 			var resizeWindow = function() {
+				//adjusting the body size dynamically
 				var $headerfooter=$("header").height()+$("footer").height();
 				var $bodyheight=$(window).height()-$headerfooter;
 				$(".body").css("height",$bodyheight);
-			};
 
-			var videoResize = function(){
 
+				//adjusting position of wrapper dynamically
+				$("#wrapper").css("top",(.1*$bodyheight));
+				var $wrapperheight = .8*$bodyheight;
+				$("#wrapper").css("height",$wrapperheight);
+
+				//adjusting position of video dynamically
+				var $videopos = .1*$wrapperheight;
+				$(".video").css("top",$videopos);
+				var $videoheight = ($wrapperheight-(2*$videopos));
+				$(".video").children().css("height",$videoheight);
+				var $videowidth = (4/3)*$videoheight;
+				$(".video").children().css("width", $videowidth);
+
+				videoCenter();
 			};
 
 			$(document).ready(ready1);
 			$(document).ready(resizeWindow);
-			$(document).ready(videoResize);
 
 
 			$(window).resize(ready1);
 			$(window).resize(resizeWindow);
-			$(window).resize(videoResize);
 		</script>
 	</head>
 	<body>
@@ -91,13 +109,16 @@
 			</header>
 		<div class="body">
 			<div id="wrapper">
-				<div id= "current_video">
-					<iframe width="420" height="315" src="http://www.youtube.com/embed/WlzAQRmo_F0" frameborder="0" allowfullscreen></iframe>
+				<div id= "current_video" class="video">
+					<iframe id="video1" width="420" height="315" src="http://www.youtube.com/embed/WlzAQRmo_F0" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="video">
+					<iframe id="video2" width="420" height="315" src="http://www.youtube.com/embed/8S-uK3Hml5c" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
 		<footer>
-			This is the footer. Copyright or whatever 2013.
+			This is the footer. Copyright or whatever Michael Paulauski 2013.
 		</footer>
 		</div>
 	</body>

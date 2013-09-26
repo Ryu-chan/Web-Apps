@@ -54,14 +54,22 @@ body {
             width: 100px;
             background: #91aa9d; }
     body > #container .body {
-      display: block;
-      width: 100%;
       padding-bottom: 40px; }
       body > #container .body > #wrapper {
-        width: 100%; }
-        body > #container .body > #wrapper > #current_video {
-          width: 50%;
-          margin: 0 auto; }
+        width: 2000000px;
+        background: rgba(252, 255, 245, 0.1);
+        position: relative;
+        top: 150px;
+        height: 150px;
+        overflow: hidden; }
+        body > #container .body > #wrapper > .video {
+          position: relative;
+          top: 50px;
+          padding-left: 200px;
+          padding-right: 200px;
+          float: left; }
+          body > #container .body > #wrapper > .video #current_video {
+            position: relative; }
     body > #container footer {
       color: #3e606f;
       text-align: center;
